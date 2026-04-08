@@ -3,7 +3,7 @@
 #
 # Usage (ChemistryLab side — no internal changes required):
 #
-#   using OptimaJL
+#   using Optima
 #   state_eq = equilibrate(state0; solver = OptimaOptimizer())
 #
 # The `OptimaOptimizer` struct satisfies the SciML `AbstractOptimizationAlgorithm`
@@ -118,7 +118,7 @@ function SciMLBase.solve(
     # (res = A*u - b, so b is implicit). We extract A and b via finite differences
     # on the constraint function evaluated at u0.
     #
-    # If the problem was built with explicit A and b stored in p (OptimaJL direct
+    # If the problem was built with explicit A and b stored in p (Optima-native
     # usage), extract them directly.
     A, b = _extract_constraints(opt_prob, u0, p)
 
@@ -285,7 +285,7 @@ Extract the linear constraint matrix A and RHS b from a SciML
 `OptimizationProblem`.
 
 Two paths:
-1. `p` is a NamedTuple with fields `A` and `b` → use directly (OptimaJL-native).
+1. `p` is a NamedTuple with fields `A` and `b` → use directly (Optima-native).
 2. Otherwise, finite-difference the constraint function at `u0` to get A, b.
 """
 function _extract_constraints(opt_prob, u0::AbstractVector{T}, p) where {T}

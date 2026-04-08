@@ -1,17 +1,17 @@
 ```@meta
-CurrentModule = OptimaJL
+CurrentModule = Optima
 ```
 
 # SciML Interface
 
 [`OptimaOptimizer`](@ref) implements `SciMLBase.AbstractOptimizationAlgorithm`
 and is designed as a drop-in replacement for `IpoptOptimizer` inside
-[ChemistryLab.jl](https://github.com/jfbarthelemy/ChemistryLab.jl).
+[ChemistryLab.jl](https://github.com/ChemistryTools/ChemistryLab.jl).
 
 ## Usage with ChemistryLab.jl
 
 ```julia
-using ChemistryLab, OptimaJL
+using ChemistryLab, Optima
 
 # Build a ChemicalState as usual, then equilibrate with OptimaOptimizer
 state_eq = equilibrate(state0; solver=OptimaOptimizer(tol=1e-10, verbose=false))
@@ -82,7 +82,7 @@ unchanged and the next call falls back to a cold start from `opt_prob.u0`.
 constraints as equalities:
 
 ```julia
-using SciMLBase, OptimaJL
+using SciMLBase, Optima
 
 ns = 3
 A = ones(1, ns)

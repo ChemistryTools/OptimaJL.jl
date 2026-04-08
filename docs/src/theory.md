@@ -1,10 +1,10 @@
 ```@meta
-CurrentModule = OptimaJL
+CurrentModule = Optima
 ```
 
 # Theory
 
-This page describes the mathematical foundations of the OptimaJL solver.
+This page describes the mathematical foundations of the Optima solver.
 The algorithm closely follows the C++ Optima library by Allan Leal
 ([github.com/reaktoro/optima](https://github.com/reaktoro/optima)) and the
 reference by Leal et al. (2014).

@@ -1,5 +1,5 @@
 ```@meta
-CurrentModule = OptimaJL
+CurrentModule = Optima
 ```
 
 # Basic Usage
@@ -9,8 +9,8 @@ CurrentModule = OptimaJL
 The simplest non-trivial Gibbs problem: three species sharing one conserved quantity.
 
 ```julia
-using OptimaJL
-import OptimaJL: solve
+using Optima
+import Optima: solve
 
 μ⁰ = [0.0, 1.0, 2.0]
 
@@ -95,7 +95,7 @@ Sample output:
   iter    2 | μ = 1.0e-04 | err_opt = 7.84e-02 | err_feas = 2.11e-08 | α = 1.000
   iter    3 | μ = 1.0e-04 | err_opt = 1.32e-02 | err_feas = 3.67e-09 | α = 1.000
   ...
-  [OptimaJL] CONVERGED after 18 iterations | err = 4.56e-13
+  [Optima] CONVERGED after 18 iterations | err = 4.56e-13
 ```
 
 Each row shows the iteration count, current barrier weight $\mu$, optimality and

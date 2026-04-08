@@ -1,10 +1,10 @@
 ```@meta
-CurrentModule = OptimaJL
+CurrentModule = Optima
 ```
 
-# OptimaJL.jl
+# Optima.jl
 
-**OptimaJL** is a Julia-native primal-dual interior-point solver for Gibbs-energy
+**Optima** is a Julia-native primal-dual interior-point solver for Gibbs-energy
 minimisation in equilibrium chemistry.
 
 It solves problems of the form
@@ -45,7 +45,7 @@ element-abundance vector, and $\varepsilon$ is a small positivity floor.
 
 ## Lineage
 
-OptimaJL is a Julia port of the **Optima** C++ library developed by
+Optima is a Julia port of the **Optima** C++ library developed by
 [Allan Leal](https://erdw.ethz.ch/en/people/profile.allan-leal.html) (ETH Zürich):
 
 <https://github.com/reaktoro/optima>

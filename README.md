@@ -1,15 +1,15 @@
-# OptimaJL.jl
+# Optima.jl
 
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://jfbarthelemy.github.io/OptimaJL.jl/stable/)
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://jfbarthelemy.github.io/OptimaJL.jl/dev/)
-[![Build Status](https://github.com/jfbarthelemy/OptimaJL.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/jfbarthelemy/OptimaJL.jl/actions/workflows/CI.yml?query=branch%3Amain)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://ChemistryTools.github.io/Optima.jl/stable/)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://ChemistryTools.github.io/Optima.jl/dev/)
+[![Build Status](https://github.com/ChemistryTools/Optima.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/ChemistryTools/Optima.jl/actions/workflows/CI.yml?query=branch%3Amain)
 
 A Julia-native primal-dual interior-point solver for Gibbs-energy minimisation in
 equilibrium chemistry.
 
 ## What it does
 
-OptimaJL solves constrained optimisation problems of the form
+Optima solves constrained optimisation problems of the form
 
 ```
 minimize    f(n, p)              (e.g. Gibbs energy G(n) = Σ nᵢ(μᵢ⁰/RT + ln nᵢ))
@@ -35,7 +35,7 @@ The algorithm is a log-barrier interior-point method with:
 ## Installation
 
 ```julia
-julia> import Pkg; Pkg.add("OptimaJL")
+julia> import Pkg; Pkg.add("Optima")
 ```
 
 Requires Julia ≥ 1.10.
@@ -43,8 +43,8 @@ Requires Julia ≥ 1.10.
 ## Quick example
 
 ```julia
-using OptimaJL
-import OptimaJL: solve   # solve is not exported; use qualified name or import
+using Optima
+import Optima: solve   # solve is not exported; use qualified name or import
 
 # Ideal three-species Gibbs problem: minimize Σ nᵢ(μᵢ⁰ + ln nᵢ) subject to Σ nᵢ = 1
 μ⁰ = [0.0, 1.0, 2.0]
@@ -65,10 +65,10 @@ println(result.iterations) # typically 15–25
 ## SciML / ChemistryLab interface
 
 `OptimaOptimizer` is a drop-in replacement for `IpoptOptimizer` in
-[ChemistryLab.jl](https://github.com/jfbarthelemy/ChemistryLab.jl):
+[ChemistryLab.jl](https://github.com/ChemistryTools/ChemistryLab.jl):
 
 ```julia
-using ChemistryLab, OptimaJL
+using ChemistryLab, Optima
 state_eq = equilibrate(state0; solver=OptimaOptimizer(tol=1e-10, verbose=false))
 ```
 
@@ -80,11 +80,11 @@ between consecutive solves.
 
 Full documentation with theory, API reference, and worked examples:
 
-<https://jfbarthelemy.github.io/OptimaJL.jl>
+<https://ChemistryTools.github.io/Optima.jl>
 
 ## Credits and lineage
 
-OptimaJL is a Julia port of the **Optima** C++ library developed by
+Optima.jl is a Julia port of the **Optima** C++ library developed by
 [Allan Leal](https://erdw.ethz.ch/en/people/profile.allan-leal.html) (ETH Zürich):
 
 <https://github.com/reaktoro/optima>
