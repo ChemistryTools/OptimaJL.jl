@@ -22,10 +22,10 @@
 
     # Build Hessian diagonal at the solution
     n = result.n
-    hf = OptimaJL.gibbs_hessian_diag(n)
+    hf = OptimaKit.gibbs_hessian_diag(n)
     # barrier at convergence: μ is very small, use eps as proxy
     μ_conv = result.iterations > 0 ? 1.0e-14 : 1.0e-14
-    h = OptimaJL.hessian_diagonal(prob, n, μ_conv, hf)
+    h = OptimaKit.hessian_diagonal(prob, n, μ_conv, hf)
 
     sens = sensitivity(prob, n, result.y, h, μ_conv)
 

@@ -1,5 +1,5 @@
 ```@meta
-CurrentModule = OptimaJL
+CurrentModule = OptimaKit
 ```
 
 # Theory

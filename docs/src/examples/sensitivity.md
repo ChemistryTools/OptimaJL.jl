@@ -1,5 +1,5 @@
 ```@meta
-CurrentModule = OptimaJL
+CurrentModule = OptimaKit
 ```
 
 # Sensitivity Analysis
@@ -19,8 +19,8 @@ already-factored Schur complement $S = A H^{-1} A^\top$).
 ## Computing sensitivity matrices
 
 ```julia
-using OptimaJL
-import OptimaJL: solve, gibbs_hessian_diag, hessian_diagonal
+using OptimaKit
+import OptimaKit: solve, gibbs_hessian_diag, hessian_diagonal
 
 μ⁰ = [0.0, 1.0, 2.0]
 G(n, p)    = sum(n[i] * (p.μ⁰[i] + log(n[i])) for i in eachindex(n))

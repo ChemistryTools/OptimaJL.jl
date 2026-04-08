@@ -1,6 +1,6 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
-OptimaJL = "24efeca9-a785-406e-adb3-83609348bee7"
+OptimaKit = "24efeca9-a785-406e-adb3-83609348bee7"
 
 [compat]
 Documenter = "1"

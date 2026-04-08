@@ -1,5 +1,5 @@
 """
-    OptimaJL
+    OptimaKit
 
 Julia-native primal-dual interior-point solver for Gibbs-energy minimisation.
 
@@ -18,7 +18,7 @@ Implements the Optima algorithm (Allan Leal, ETH Zürich) in Julia, with:
 - [`sensitivity`](@ref)         — post-convergence sensitivity matrices
 - [`OptimaOptimizer`](@ref)     — SciML drop-in optimizer
 """
-module OptimaJL
+module OptimaKit
 
 using LinearAlgebra
 import ForwardDiff
@@ -45,7 +45,7 @@ export OptimaProblem, OptimaOptions, OptimaState, OptimaResult
 export Canonicalizer
 
 # Solver  (not exported — extend SciMLBase.solve for OptimaProblem via
-# sciml_interface.jl; raw solve/solve! accessible as OptimaJL.solve/solve!)
+# sciml_interface.jl; raw solve/solve! accessible as OptimaKit.solve/solve!)
 # export solve, solve!
 
 # Sensitivity
@@ -60,4 +60,4 @@ export NewtonStep, compute_step!, clamp_step
 export LineSearchFilter, line_search
 export classify_variables, reduced_step_for_unstable!, stability_measure
 
-end # module OptimaJL
+end # module OptimaKit

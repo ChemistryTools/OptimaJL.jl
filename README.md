@@ -1,8 +1,8 @@
-# OptimaJL.jl
+# OptimaKit.jl
 
-[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://ChemistryTools.github.io/OptimaJL.jl/stable/)
-[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://ChemistryTools.github.io/OptimaJL.jl/dev/)
-[![Build Status](https://github.com/ChemistryTools/OptimaJL.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/ChemistryTools/OptimaJL.jl/actions/workflows/CI.yml?query=branch%3Amain)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://ChemistryTools.github.io/OptimaKit.jl/stable/)
+[![Dev](https://img.shields.io/badge/docs-dev-blue.svg)](https://ChemistryTools.github.io/OptimaKit.jl/dev/)
+[![Build Status](https://github.com/ChemistryTools/OptimaKit.jl/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/ChemistryTools/OptimaKit.jl/actions/workflows/CI.yml?query=branch%3Amain)
 
 A Julia-native primal-dual interior-point solver for Gibbs-energy minimisation in
 equilibrium chemistry.
@@ -35,7 +35,7 @@ The algorithm is a log-barrier interior-point method with:
 ## Installation
 
 ```julia
-julia> import Pkg; Pkg.add("OptimaJL")
+julia> import Pkg; Pkg.add("OptimaKit")
 ```
 
 Requires Julia ≥ 1.10.
@@ -43,8 +43,8 @@ Requires Julia ≥ 1.10.
 ## Quick example
 
 ```julia
-using OptimaJL
-import OptimaJL: solve   # solve is not exported; use qualified name or import
+using OptimaKit
+import OptimaKit: solve   # solve is not exported; use qualified name or import
 
 # Ideal three-species Gibbs problem: minimize Σ nᵢ(μᵢ⁰ + ln nᵢ) subject to Σ nᵢ = 1
 μ⁰ = [0.0, 1.0, 2.0]
@@ -80,11 +80,11 @@ between consecutive solves.
 
 Full documentation with theory, API reference, and worked examples:
 
-<https://ChemistryTools.github.io/OptimaJL.jl>
+<https://ChemistryTools.github.io/OptimaKit.jl>
 
 ## Credits and lineage
 
-OptimaJL.jl is a Julia port of the **Optima** C++ library developed by
+OptimaKit.jl is a Julia port of the **Optima** C++ library developed by
 [Allan Leal](https://erdw.ethz.ch/en/people/profile.allan-leal.html) (ETH Zürich):
 
 <https://github.com/reaktoro/optima>
